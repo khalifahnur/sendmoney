@@ -14,7 +14,7 @@ export default function MoneyTransferPage() {
   const [amount, setAmount] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
     // Simulate STK push
@@ -28,7 +28,7 @@ export default function MoneyTransferPage() {
     <div className="flex min-h-screen flex-col bg-gray-50">
       <header className="bg-white border-b">
         <div className="container flex h-16 items-center justify-between py-4">
-          <div className="flex items-center gap-2 font-bold text-xl">
+          <div className="flex items-center gap-2 font-bold text-xl md:px-20 px-5">
             <Link href="/">
               <span className="text-primary">Cash</span>Flow
             </Link>

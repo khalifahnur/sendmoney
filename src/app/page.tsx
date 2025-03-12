@@ -174,7 +174,7 @@ export default function Home() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground mr-4 shrink-0">1</div>
                     <div>
                       <h3 className="font-bold text-lg">Enter phone number</h3>
-                      <p className="text-muted-foreground">Input your recipient's mobile number - no account needed on their end.</p>
+                      <p className="text-muted-foreground">Input your recipient&apos;s mobile number - no account needed on their end.</p>
                     </div>
                   </div>
                   
@@ -190,7 +190,7 @@ export default function Home() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground mr-4 shrink-0">3</div>
                     <div>
                       <h3 className="font-bold text-lg">Confirm and send</h3>
-                      <p className="text-muted-foreground">Click send and we'll deliver an STK push notification to the recipient's phone instantly.</p>
+                      <p className="text-muted-foreground">Click send and we&apos;ll deliver an STK push notification to the recipient&apos;s phone instantly.</p>
                     </div>
                   </div>
                 </div>

@@ -121,11 +121,11 @@ export default function LoginPage() {
               </div>
             </CardContent>
             <CardFooter className="flex flex-col space-y-4">
-              <Button type="submit" className="w-full" disabled={isLoading}>
+              <Button type="submit" className="w-full" disabled={isLoading} onClick={()=>router.replace("/dashboard")}>
                 {isLoading ? "Logging in..." : "Login"}
               </Button>
               <div className="text-center text-sm">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link href="/signup" className="text-primary hover:underline">
                   Sign up
                 </Link>
