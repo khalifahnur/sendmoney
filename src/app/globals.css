@@ -1,26 +1,206 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Modern, professional color scheme */
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.2 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0 0);
+  
+  /* Primary color - professional blue */
+  --primary: oklch(0.55 0.182 264.0);
+  --primary-foreground: oklch(0.98 0 0);
+  
+  /* Secondary and accent colors */
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.25 0 0);
+  --accent: oklch(0.97 0.03 264.0);
+  --accent-foreground: oklch(0.25 0 0);
+  
+  /* Supporting colors */
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --destructive: oklch(0.65 0.27 25.0);
+  --destructive-foreground: oklch(0.98 0 0);
+  
+  /* UI elements */
+  --border: oklch(0.89 0 0);
+  --input: oklch(0.89 0 0);
+  --ring: oklch(0.55 0.182 264.0 / 0.5);
+  
+  /* Chart colors - harmonious palette */
+  --chart-1: oklch(0.65 0.22 264.0);
+  --chart-2: oklch(0.60 0.18 230.0);
+  --chart-3: oklch(0.55 0.15 190.0);
+  --chart-4: oklch(0.60 0.18 130.0);
+  --chart-5: oklch(0.65 0.20 90.0);
+  
+  /* Sidebar styling */
+  --sidebar: oklch(0.55 0.182 264.0);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.45 0.15 264.0);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.60 0.18 264.0 / 0.15);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.50 0.15 264.0);
+  --sidebar-ring: oklch(0.70 0.20 264.0);
+  
+  /* Border radius for consistent UI */
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Dark mode - deeper, richer colors */
+  --background: oklch(0.16 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.18 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  
+  /* Primary colors - vibrant in dark mode */
+  --primary: oklch(0.65 0.22 264.0);
+  --primary-foreground: oklch(0.16 0 0);
+  
+  /* Secondary and accent colors - subtle but visible */
+  --secondary: oklch(0.26 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --accent: oklch(0.35 0.10 264.0);
+  --accent-foreground: oklch(0.95 0 0);
+  
+  /* Supporting colors */
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.75 0 0);
+  --destructive: oklch(0.65 0.25 25.0);
+  --destructive-foreground: oklch(0.95 0 0);
+  
+  /* UI elements - subtle contrast */
+  --border: oklch(0.28 0 0);
+  --input: oklch(0.28 0 0);
+  --ring: oklch(0.65 0.22 264.0 / 0.5);
+  
+  /* Chart colors - pop against dark background */
+  --chart-1: oklch(0.65 0.24 264.0);
+  --chart-2: oklch(0.70 0.20 230.0);
+  --chart-3: oklch(0.75 0.18 190.0);
+  --chart-4: oklch(0.70 0.25 130.0);
+  --chart-5: oklch(0.65 0.27 90.0);
+  
+  /* Sidebar styling - distinctive but cohesive */
+  --sidebar: oklch(0.13 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.65 0.22 264.0);
+  --sidebar-primary-foreground: oklch(0.16 0 0);
+  --sidebar-accent: oklch(0.22 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.28 0 0);
+  --sidebar-ring: oklch(0.65 0.22 264.0 / 0.5);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Improve form elements styling */
+  input, textarea, select, button {
+    @apply text-foreground transition-colors duration-200;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Improve focus states */
+  :focus-visible {
+    @apply outline-ring/50 outline-2 outline-offset-2;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Enhance scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/40 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/60;
+}
+
+/* Better link styling */
+a {
+  @apply transition-colors duration-200;
+}
+
+/* Improve transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
