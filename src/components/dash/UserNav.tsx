@@ -63,6 +63,15 @@ export function UserNav() {
     return { firstName, lastName, initials };
   }
 
+  if (!user) {
+    return (
+      <header className="flex items-center justify-between p-4 border-b border-slate-200 bg-white shadow-sm">
+        <div className="animate-pulse h-10 bg-slate-200 rounded w-32"></div>
+        <div className="animate-pulse h-10 bg-slate-200 rounded-full w-10"></div>
+      </header>
+    );
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -77,7 +86,7 @@ export function UserNav() {
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">{firstName} {lastName}</p>
-            <p className="text-xs leading-none text-muted-foreground">john.doe@example.com</p>
+            <p className="text-xs leading-none text-muted-foreground">{email}</p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
