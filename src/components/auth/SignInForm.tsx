@@ -153,8 +153,7 @@ export default function LoginPage() {
                     </Label>
                   </div>
                 </CardContent>
-                <CardFooter className="flex flex-col space-y-4">
-                  @typescript-eslint/no-unused-vars
+                <CardFooter className="flex flex-col space-y-4 pt-5">
                   <Button
                     type="submit"
                     className="w-full"
