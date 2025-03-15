@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://fb69-41-90-44-113.ngrok-free.app/sendmoney",
+  baseURL: "https://sendmoneyserver-production.up.railway.app/sendmoney",
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json"
